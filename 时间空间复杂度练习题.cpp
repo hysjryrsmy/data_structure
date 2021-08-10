@@ -5,7 +5,6 @@
 //输入：[3, 0, 1]
 //输出：2
 
-
 int missingNumber(int* nums, int numsSize) {
         int x = 0;
         for (size_t i = 0; i < numsSize; ++i) {
