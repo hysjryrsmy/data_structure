@@ -11,10 +11,31 @@
 
 
 
-/**
+class Solution {
+public:
+    vector<int> singleNumber(vector<int>& nums) {
+        int ret = 0;
+        for (int n : nums)
+            ret ^= n;
+        int div = 1;
+        while ((div & ret) == 0)
+            div <<= 1;
+        int a = 0, b = 0;
+        for (int n : nums)
+            if (div & n)
+                a ^= n;
+            else
+                b ^= n;
+        return vector<int>{a, b};
+    }
+};
+
+
+/*
  * Note: The returned array must be malloced, assume caller calls free().
  */
 
+/*
 //假设出现1次的两个数位x1和x2
 int* singleNumber(int* nums, int numsSize, int* returnSize) {
 	int ret = 0;
@@ -53,4 +74,5 @@ int* singleNumber(int* nums, int numsSize, int* returnSize) {
 
 	return retArr;
 }
+*/
 
