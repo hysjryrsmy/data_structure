@@ -222,6 +222,19 @@ public:
         length++;
         return true;
     }
+    /*
+    int insert(Vector *vector, int loc, int value) {
+    if(loc<0 || loc > vector->length){
+        return ERROR;
+    }
+    for(int i = vector->length; i>loc; i--){
+        vector->data[i] = vector->data[i-1];
+    }
+    vector->data[loc] = value;
+    vector->length++;
+    return OK;
+    }   
+    */
     void expand() {
         Type* old_data = data;
         size *= 2;
@@ -243,6 +256,32 @@ int main() {
     }
     return 0;
 }
+/*
+int main() {
+    Vector *a = (Vector *)malloc(sizeof(Vector));
+    init(a, 5);
+    int n, p, q;
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d %d", &p, &q);
+        if (p < 0 || p > a->length) {
+            printf("failed\n");
+            continue;
+        }
+        else if (a->length >= a->size) {
+            expand(a);
+            printf("expand\n");
+        }
+        insert(a, p, q);
+        printf("success\n");
+    }
+    clear(a);
+    return 0;
+}
+*/
+
+
+
 
 //C语言方式
 /*
